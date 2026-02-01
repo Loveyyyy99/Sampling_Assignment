@@ -1,64 +1,118 @@
-# Sampling Assignment
+# Sampling Assignment – Imbalanced Credit Card Dataset
 
 ## Objective
-To study the impact of different sampling techniques on machine learning models when working with a highly imbalanced credit card dataset.
+To analyze how different sampling techniques affect the performance of machine learning models on a highly imbalanced credit card dataset.
+
+---
 
 ## Dataset
-- Creditcard_data.csv
-- Binary classification dataset
-- Highly imbalanced classes
+- **Creditcard_data.csv**
+- Binary classification problem (Fraud / Non-Fraud)
+- Dataset is highly imbalanced
 
-## Steps Followed
-1. Loaded and analyzed the imbalanced dataset  
-2. Converted the dataset into a balanced dataset using SMOTE  
-3. Created five samples from the balanced dataset  
-4. Applied five different sampling techniques  
-5. Trained five different machine learning models  
-6. Compared model accuracy and visualized results  
+---
+
+## Methodology
+1. Loaded and analyzed the original imbalanced dataset  
+2. Converted the dataset into a balanced dataset using **SMOTE**  
+3. Created **five samples** from the balanced dataset  
+4. Applied **five different sampling techniques**  
+5. Trained **five machine learning models**  
+6. Compared results using accuracy tables and visualizations  
+
+---
 
 ## Dataset Balancing
-- Technique used: SMOTE
-- Result: Equal number of samples in both classes
-- Output file: data/balanced_data.csv
+The original dataset was highly imbalanced.  
+SMOTE was used to generate synthetic samples for the minority class so that both classes have equal representation.
 
-## Samples Created
-Five samples were created from the balanced dataset:
-- sample_1.csv
-- sample_2.csv
-- sample_3.csv
-- sample_4.csv
-- sample_5.csv
+---
 
-## Sampling Techniques
-- Sampling1: Random Under Sampling  
-- Sampling2: Random Over Sampling  
-- Sampling3: SMOTE  
-- Sampling4: SMOTE + ENN  
-- Sampling5: SMOTE + Tomek Links  
+## Sampling Techniques Used
+- **Sampling1** – Random Under Sampling  
+- **Sampling2** – Random Over Sampling  
+- **Sampling3** – SMOTE  
+- **Sampling4** – SMOTE + ENN  
+- **Sampling5** – SMOTE + Tomek Links  
+
+---
 
 ## Machine Learning Models
-- M1: Logistic Regression  
-- M2: Decision Tree  
-- M3: Random Forest  
-- M4: Support Vector Machine  
-- M5: K-Nearest Neighbors  
+- **M1** – Logistic Regression  
+- **M2** – Decision Tree  
+- **M3** – Random Forest  
+- **M4** – Support Vector Machine  
+- **M5** – K-Nearest Neighbors  
+
+---
 
 ## Results
-- Accuracy was calculated for each Sampling–Model combination
-- Results saved in: results/accuracy_table.csv
 
-## Visualizations
-- Accuracy heatmap
-- Model-wise comparison bar plot
-- Sampling-wise comparison bar plot
+### Accuracy Table
+Accuracy values for each combination of sampling technique and model were calculated and stored in tabular form.
 
-All visualizations are saved in the results folder.
+<img width="1093" height="147" alt="image" src="https://github.com/user-attachments/assets/a9f53609-d4bf-4fc2-ab06-5363bf7cf9bd" />
+
+---
+
+### Accuracy Heatmap
+The heatmap below shows how model accuracy varies with different sampling techniques.
+
+![Accuracy Heatmap](results/accuracy_heatmap.png)
+
+---
+
+### Model-wise Comparison
+This bar plot compares the performance of each model across all sampling techniques.
+
+![Model-wise Comparison](results/model_comparison_barplot.png)
+
+---
+
+### Sampling-wise Comparison
+This bar plot compares how different models perform under each sampling technique.
+
+![Sampling-wise Comparison](results/sampling_comparison_barplot.png)
+
+---
 
 ## Conclusion
-Sampling techniques have a significant impact on model performance. Oversampling and hybrid sampling techniques generally performed better, and ensemble models showed strong accuracy on the balanced dataset.
+- Sampling techniques significantly influence model performance  
+- Oversampling and hybrid techniques generally outperform undersampling  
+- Random Forest showed strong and consistent performance across sampling methods  
+- Proper handling of class imbalance is essential for reliable machine learning models  
+
+---
+---
 
 ## How to Run
 1. Install dependencies:
    pip install -r requirements.txt
+
 2. Run the notebook:
    notebooks/sampling_analysis.ipynb
+
+---
+
+
+##  Project Structure
+
+```
+
+├── data/
+│   ├── Creditcard_data.csv          
+│   ├── balanced_data.csv             
+│   ├── sample_1.csv                  
+│   ├── sample_2.csv                  
+│   ├── sample_3.csv                  
+│   ├── sample_4.csv                 
+│   └── sample_5.csv                  
+├── notebooks/
+│   └── sampling_analysis.ipynb       
+├── results/
+│   ├── accuracy_table.csv           
+│   ├── accuracy_heatmap.png          
+│   ├── model_comparison.png          
+│   └── sampling_comparison.png       
+├── requirements.txt                  
+└── README.md                         
